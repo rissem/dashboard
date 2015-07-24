@@ -1,0 +1,26 @@
+<head>
+  <title>scratchpad</title>
+</head>
+
+<body>
+  <h1>{{ scratchCount }} lines of scratch</h1>
+  {{> pomodoro }}
+</body>
+
+<template name="pomodoro">
+  {{> activePomodoro }}
+  <hr />
+  <h2>{{dayCount}} Pomodoros</h2>
+  {{#each times}}
+    <!-- {{this}} -->
+  {{/each}}
+</template>
+
+<template name="activePomodoro">
+  {{#if active}}
+  <img src="/tomato.png" />
+  <h1>{{timeRemaining}}</h1>
+  {{else}}
+  <button>Start Pomodoro</button><br />
+  {{/if}}
+</template>
